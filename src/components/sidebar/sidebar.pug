@@ -1,0 +1,23 @@
+// Add .is-active is show
+aside.sidebar
+    button.btn.sidebar__close(type="button")
+        +icon("x-lg")
+
+    header.sidebar__task-header
+        .checkbox.sidebar__checkbox
+            input.checkbox__input(id="sbTask" type="checkbox")
+            label.checkbox__label(for="sbTask")
+
+        h2.h5.sidebar__task-tlt Сходить в магазин
+
+    form(action="#")
+        .field
+            .mb-2
+                textarea.field__input.sidebar__task-text(placeholder="Описание задачи")
+
+            .text-end
+                button.btn.btn-primary.btn-sm.px-3.text-white(type="button") Добавить
+
+    .note.mt-30
+        include ../note/note
+

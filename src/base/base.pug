@@ -1,0 +1,22 @@
+include ../mixins/pug/svg-icon
+block variables
+    -
+        var baseDir = './';
+
+doctype html
+html(lang="ru")
+    //- Include head
+    include ./pug/head
+
+    body(class=pageClass)
+        .page
+            .container
+                block main
+
+        .d-none
+            include ../../dist/images/sprite.svg
+
+        // script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+        // script(src=`${baseDir}js/main.js`)
+
+        block script

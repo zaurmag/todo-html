@@ -1,0 +1,13 @@
+mixin task(title, id, chkd)
+    - cls = cls || ''
+
+    .row.gx-sm-30.gx-15.align-items-center
+        .col-sm-2.col-auto.task__left
+            .checkbox.task__checkbox
+                input.checkbox__input(id= id type="checkbox" checked= chkd)
+                label.checkbox__label(for= id)
+
+        .col-sm-10.col.task__right
+            .task__title
+                a.task__title-link(href="#")
+                    span= title

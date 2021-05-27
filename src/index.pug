@@ -1,0 +1,44 @@
+extends ./base/base
+include ./components/task/task
+
+append variables
+    - var title = 'Список задач'
+
+block main
+    .todo
+        // Header
+        header.todo__header
+            h2.todo__title Список задач
+
+        // Body
+        main.todo__body
+            form(action="#")
+                .tasks
+                    // Active tasks
+                    .tasks__active
+                        each item, index in tasksActive
+                            - var isActive = index === 0 ? 'is-active' : null
+                            .task(class= isActive)
+                                +task(item.title, `task-${index + 1}`, false)
+
+                    // Toggle inactive btn
+                    .row.g-0.pt-10
+                        .col-sm-10.offset-sm-2.ps-sm-30.ps-20
+                            button.todo__toggle-inactive.btn.btn-primary.btn-sm.is-active(type="button")
+                                +icon("chevron-right")
+                                | Завершенные
+                                span.todo__inactive-count (5)
+
+                    // Inactive tasks
+                    .tasks__inactive
+                        each item, index in tasksInActive
+                            .task.is-inactive
+                                +task(item.title, `taskIA-${index + 1}`, true)
+            // Sidebar
+            include ./components/sidebar/sidebar
+
+        // Footer
+        footer.todo__footer
+            .row
+                .col-sm-10.offset-sm-2
+                    include ./components/field/field
