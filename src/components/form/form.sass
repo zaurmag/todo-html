@@ -1,8 +1,5 @@
-.field
+.form
     $self: &
-    // Form
-    &__form
-        position: relative
 
     // Input
     &__input
@@ -11,7 +8,7 @@
         border: solid 1px #e6e9e9
         background-color: #fdfdfd
         height: 40px
-        padding: 5px 50px 5px 15px
+        padding: 5px 40px 5px 15px
         font-size: 14px
         transition: border-color .3s ease
         width: 100%
@@ -25,13 +22,17 @@
             outline: none
             transition: border-color .3s ease
 
+        // Is error
+        .is-error &
+            border-color: $red
+
     // Button
     &__btn
         flex-shrink: 1
         position: absolute
         top: 50%
         transform: translateY(-50%)
-        right: 15px
+        right: 10px
         padding: 0
 
         .icon
@@ -43,3 +44,9 @@
         &#{$self}
             &__input
                 height: 80px
+
+    // Validate error
+    &__error-txt
+        color: $red
+        font-size: 12px
+        margin-top: 5px
