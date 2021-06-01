@@ -1,0 +1,28 @@
+.confirm
+    &__bg
+        background-color: rgba($black, .7)
+        @include pos-strech
+        z-index: 22
+
+    &__content
+        background-color: $white
+        padding: 15px
+        @include pos-center
+        width: 100%
+        max-width: 330px
+        z-index: 25
+
+    &__buttons
+        display: flex
+        justify-content: center
+
+        .btn
+            color: $white
+
+            &:not(:last-child)
+                margin-right: 8px
+
+    &__title
+        margin-top: 0
+        margin-bottom: 15px
+        text-align: center
